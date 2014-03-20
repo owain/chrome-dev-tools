@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Chrome Dev Tools for the inefficiently lazy developer</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/ember.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+			.force-element-demo:active{
+				color: HotPink;
+			}
+			.force-element-demo:focus{
+				color: red;
+			}
+			.reveal i {
+				font-style: normal;
+			}
+			.reveal .fa-icon,
+			.reveal [class^="fa-"],
+			.reveal [class*=" fa-"]  {
+			  font-family: 'FontAwesome';
+			}
+
+			a .fa{
+				font-size: 0.5em;	
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Section -->
+				<section>
+					<section data-track="title">
+						<h2>Chrome Dev Tools</h2>
+						<h4>for the inefficiently lazy developer</h4>
+
+						<aside class="notes">
+							<ul>
+								<li></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="my-name">
+						<h2>aka Me!</h2>
+					</section>
+					<section data-track="my-name">
+						<p>
+							<b>Owain Williams</b>
+						</p>
+					</section>
+					<section data-track="my-job">
+						<a target="_blank" class="test" href="http://toushay.com">
+							<img class="image" src="img/toushay-logo.png" >
+						</a>
+						<p>Front-End Engineer @ <a target="_blank" href="http://toushay.com">Toushay</a></p>
+					</section>
+					<section data-track="my-job">
+						<a target="_blank" class="test" href="http://emberweekly.com">
+							<img class="image" src="img/ember-weekly-logo.png" >
+						</a>
+						<p>Curator @ <a target="_blank" href="http://emberweekly.com">Ember Weekly</a></p>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Covered in this talk</h3>
+						<br />
+						<ul>
+							<li>Quick Tour</li>
+							<li>Tips + Tricks</li>
+							<li>Tools + Resources</li>
+						</ul>
+					</section>
+					<section data-track="what-is-ember">
+						<h3>NOT Covered in this talk</h3>
+						<br />
+						<ul>
+							<li>Introduction to developer tools</li>
+							<li>Deep dive into features</li>
+							<li>Firefox Dev Tools - sorry :(</li>
+							<li>IE - because it has shit developer tools!</li>
+						</ul>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Let me in!</h3>
+						<br />
+						<p>
+							<a target="_blank" class="test" href="https://developers.google.com/chrome-developer-tools/docs/shortcuts">
+								<img class="image" src="img/Keyboard_Shortcuts_-_Chrome_DevTools_—_Google_Developers.png" >
+							</a>
+						</p>
+						<p>or right-click of course.</p>
+						<p>There are a <a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/shortcuts">ton more shortcuts</a> btw!
+					</section>
+					<section data-track="what-is-ember">
+						<h3>Docking</h3>
+						<p>
+							<a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/authoring-development-workflow#dock-to-right">
+								<img class="image" src="https://developers.google.com/chrome-developer-tools/docs/authoring-development-workflow/chrome_docktomain.jpg" >
+							</a>
+						</p>
+						<ul>
+							<li>Docked bottom</li>
+							<li>Docked right (widescreens)</li>
+							<li>Undocked Window</li>
+						</ul>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Elements</h3>
+						<br />
+						<p>View and edit the loaded web page's DOM and CSS.</p>
+						<br />
+					</section>
+					<section data-track="what-is-ember">
+						<p><ul class="force-element-demo">
+							<li>Drag n Drop Elements</li>
+							<li>$0, $1, $2, ...</li>
+							<li>Force Element State, Colour Picker, etc</li>
+							<li>Event Listeners</li>
+							<li>DOM Breakpoints</li>
+						</ul></p>
+						<br />
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/dom-and-styles">Chrome Dev Tools Elements docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Network</h3>
+						<br />
+						<p>Records detailed information about each network operation in your application.</p>
+						<br />
+					</section>
+					<section data-track="what-is-ember">
+						<p><ul>
+							<li><code>load</code> + <code>DOMContentLoaded</code> events</li>
+							<li>Customize displayed data (right-click)</li>
+							<li>HAR</li>
+							<li><code>window.performance</code></li>
+						</ul></p>
+						<br />
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/network">Chrome Dev Tools Networks docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Snippets</h3>
+						<br />
+						<p>Allows you to create, store and run JavaScript within the Sources tab.</p>
+						<p>
+							<a target="_blank" class="test" href="https://developers.google.com/chrome-developer-tools/docs/console">
+								<img class="image" src="https://developers.google.com/chrome-developer-tools/docs/authoring-development-workflow/sources_creating.jpg" >
+							</a>
+						</p>
+						<br />
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/authoring-development-workflow#snippets">Chrome Dev Tools Snippets docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Console</h3>
+						<br />
+						<ul>
+							<li>A place to log diagnostic information </li>
+							<li>A shell prompt where you can enter commands and interact with the document</li>
+						</ul>
+						<br />
+					</section>
+					<section data-track="what-is-ember">
+						<p><ul>
+							<li>Console Settings</li>
+							<li>Console API</li>
+							<li>Commandline API</li>
+						</ul></p>
+						<br />
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/console">Chrome Dev Tools Console docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+					</section>
+
+					<section data-track="what-is-ember">
+						<h4>Console Settings</h4>
+						<br />
+						<a target="_blank" class="test" href="https://developers.google.com/chrome-developer-tools/docs/console">
+							<img class="image" src="https://developers.google.com/chrome-developer-tools/docs/console-files/console-context-menu.png" >
+						</a>
+						<!-- <p>Log XMLHttpRequests + Preserve log upon navigation</p> -->
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/console">Chrome Dev Tools Console docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+						<br />
+					</section>
+
+					<section data-track="what-is-ember">
+						<h4>Console API</h4>
+						<br />
+						<a target="_blank" class="test" href="https://developers.google.com/chrome-developer-tools/docs/console-api">
+							<img class="image" src="img/Console_API_Reference_-_Chrome_DevTools_—_Google_Developers.png" >
+						</a>
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/console-api">Chrome Dev Tools Console API docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+						<!-- <p>Log XMLHttpRequests + Preserve log upon navigation</p> -->
+						<p></p>
+
+						<aside class="notes">
+							<ul>
+								<li>console.count('label')</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-track="what-is-ember">
+						<h4>Commandline API</h4>
+						<br />
+						<a target="_blank" class="test" href="https://developers.google.com/chrome-developer-tools/docs/commandline-api">
+							<img class="image" src="img/Command_Line_API_Reference_-_Chrome_DevTools_—_Google_Developers.png" >
+						</a>
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/commandline-api">Chrome Dev Tools Commandline API docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+						<!-- <p>Log XMLHttpRequests + Preserve log upon navigation</p> -->
+						<p></p>
+
+						<aside class="notes">
+							<ul>
+								<li>$ === document.querySelector</li>
+								<li>$S === document.querySelectorAll</li>
+								<li>document.body vs dir(document.body)</li>
+								<li>monitorEvents(window, "resize");</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Sources</h3>
+						<p>
+							<a target="_blank" class="test" href="https://developers.google.com/chrome-developer-tools/docs/javascript-debugging#sources-panel">
+							<img class="image" src="https://developers.google.com/chrome-developer-tools/docs/javascript-debugging/javascript-debugging-overview.jpg" >
+						</a>
+						</p>
+						<br />
+					</section>
+					<section data-track="what-is-ember">
+						<h4>Sources</h4>
+						<br />
+						<p><ul>
+							<li>Fuzzy Search</li>
+							<li>Pretty Print</li>
+							<li>Local Modifications</li>
+						</ul></p>
+						<br />
+					</section>
+					<section data-track="what-is-ember">
+						<h4>Breakpoints</h4>
+						<br />
+						<p><ul>
+							<li>Conditional break point</li>
+							<li>Pause on exception</li>
+							<li>Toggle breakpoints</li>
+						</ul></p>
+						<br />
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/javascript-debugging">Chrome Dev Tools JS debugging docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+					</section>
+				</section>
+
+<!-- Section -->
+				
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Mobile Emulation</h3>
+						<br />
+						<ul>
+							<li>Screen Size</li>
+							<li>Geolocation</li>
+							<li>Touch</li>
+							<li>User Agent</li>
+						</ul>
+						<br />
+						<p style="text-align: right;">
+							<small><a target="_blank" href="https://developers.google.com/chrome-developer-tools/docs/mobile-emulation">Chrome Dev Tools Emulation docs <i class="fa fa-external-link"></i></a></small>
+						</p>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<section data-track="what-is-ember">
+						<h3>Tools</h3>
+						<br />
+						<ul>
+							<li><a target="_blank" href="https://developers.google.com/chrome-developer-tools/">Chrome Canary</a></li>
+							<li>Page Speed</li>
+							<li>Ember / Angular Inspector</li>
+							<li><a target="_blank" href="Node Inspector"></a></li>
+						</ul>
+					</section>
+					<section data-track="what-is-ember">
+						<h3>Resources</h3>
+						<br />
+						<ul>
+							<li><a target="_blank" href="https://developers.google.com/chrome-developer-tools/">Chrome Documentation</a></li>
+							<li><a target="_blank" href="http://addyosmani.com/blog/">Addy Osmani</a></li>
+							<li><a target="_blank" href="https://twitter.com/paul_irish">Paul Irish</a></li>
+							<li><a target="_blank" href="http://www.html5rocks.com">HTML5 Rocks</a></li>
+							<li><a target="_blank" href="http://jankfree.org/">Jank Free</a></li>
+						</ul>
+					</section>
+				</section>
+
+<!-- Section -->
+
+				<section>
+					<h1>Thank You</h1>
+					<br/>
+					<small>This mess was thrown together by</small>
+					<p>Owain Williams</p>
+					<small><a target="_blank" href="http://www.twitter.com/owz">@owz</a></small>
+				</section>
+
+<!-- Section -->
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
